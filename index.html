@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj</title>
+</head>
+<script>
+    window.onload=mostrar;
+    function mostrar(){
+        date();
+        time();
+    }
+    function date(){ 
+        var d = new Date(); 
+        var dia = d.getDate();
+        var mes = d.getMonth();
+        var año = d.getFullYear();
+        setInterval(date, 1000);
+        var fecha = document.getElementById('fecha').innerHTML=dia+'/'+mes+'/'+año;
+    }
+    function time(){
+        var t = new Date();
+        var hora = t.getHours();
+        var minutos = t.getMinutes();
+        var segundos = t.getSeconds();
+        setInterval(time, 1000);
+        var tiempo = document.getElementById('tiempo').innerHTML=hora+':'+minutos+':'+segundos;
+    }
+    </script>
+    <style>
+        body{
+            margin: auto;
+            padding: auto;
+            box-sizing: border-box;
+            background-color: rgb(42, 40, 40);
+            font-family: fantasy;
+        }
+        div{
+            border: 1px solid black;
+            -webkit-box-shadow: 0 0 32px 0 #000000;
+            -moz-box-shadow: 0 0 32px 0 #000000;
+            box-shadow: 0 0 32px 0 #000000;
+            background-color: black;
+            margin: 15% auto;
+            font-size: 40px;
+            color: #fff;
+            text-align: center;
+            width: 15cm;
+            height: 8.5cm;
+            border-radius: 50px;
+        }
+        #tiempo{
+            margin: -30px auto;
+            -webkit-box-shadow: inset 0 0 15px 0 #000000;
+            -moz-box-shadow: inset 0 0 15px 0 #000000;
+            box-shadow: inset 0 0 15px 0 #000000;
+            width: 10cm;
+            background: #000156;
+            background: -webkit-linear-gradient(0deg, #000156 0%, #2f004a 100%);
+            background: linear-gradient(0deg, #000156 0%, #2f004a 100%);
+            border-radius: 50px;
+            height: 2.9cm;
+        }
+        #fecha{
+            margin-top: 40px;
+            -webkit-box-shadow: inset 0 0 15px 0 #000000;
+            -moz-box-shadow: inset 0 0 15px 0 #000000;
+            box-shadow: inset 0 0 15px 0 #000000;
+            background: #000156;
+            background: -webkit-linear-gradient(0deg, #000156 0%, #2f004a 100%);
+            background: linear-gradient(0deg, #000156 0%, #2f004a 100%);
+            height: 2.9cm;
+            width: 13cm;
+            border-radius: 50px;
+            margin-left: 35px;
+        }
+    </style>
+<body>
+    <div>
+    <h1 id="fecha"></h1>
+    <h1 id="tiempo"></h1>
+    </div>
+</body>
+</html>
